@@ -1,6 +1,6 @@
 'use client'
 
-import { Target, Users, Award, Clock } from 'lucide-react'
+import { Target, Users, Globe, Award, TrendingUp, CheckCircle } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function About() {
@@ -24,94 +24,216 @@ export default function About() {
     return () => observer.disconnect()
   }, [])
 
+  const keyPoints = [
+    {
+      icon: Target,
+      title: "Own premium nuts and dry fruits under 'Glomin' brand",
+      description: "We market our own premium quality products alongside partner brands",
+      color: "blue"
+    },
+    {
+      icon: Users,
+      title: "Reliable distribution",
+      description: "Robust infrastructure with adequate manpower and reliable data systems",
+      color: "purple"
+    },
+    {
+      icon: Globe,
+      title: "Multi-brand capability",
+      description: "Wide portfolio making supply flexible even for small PO volumes",
+      color: "green"
+    },
+    {
+      icon: Award,
+      title: "Quick Commerce Ready",
+      description: "Adapt to market shifts ensuring fast, reliable supply",
+      color: "orange"
+    },
+    {
+      icon: TrendingUp,
+      title: "Experienced Leadership",
+      description: "Deep expertise in structured business management and compliance",
+      color: "indigo"
+    },
+    {
+      icon: CheckCircle,
+      title: "Long-term Relationships",
+      description: "Prioritize trust, transparency, and performance over short-term gain",
+      color: "emerald"
+    }
+  ]
+
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case 'blue':
+        return 'bg-blue-50 border-blue-200 text-blue-800'
+      case 'purple':
+        return 'bg-purple-50 border-purple-200 text-purple-800'
+      case 'green':
+        return 'bg-green-50 border-green-200 text-green-800'
+      case 'orange':
+        return 'bg-orange-50 border-orange-200 text-orange-800'
+      case 'indigo':
+        return 'bg-indigo-50 border-indigo-200 text-indigo-800'
+      case 'emerald':
+        return 'bg-emerald-50 border-emerald-200 text-emerald-800'
+      default:
+        return 'bg-blue-50 border-blue-200 text-blue-800'
+    }
+  }
+
+  const getIconColor = (color: string) => {
+    switch (color) {
+      case 'blue':
+        return 'text-blue-600'
+      case 'purple':
+        return 'text-purple-600'
+      case 'green':
+        return 'text-green-600'
+      case 'orange':
+        return 'text-orange-600'
+      case 'indigo':
+        return 'text-indigo-600'
+      case 'emerald':
+        return 'text-emerald-600'
+      default:
+        return 'text-blue-600'
+    }
+  }
+
   return (
-    <section id="about-section" className="section-padding gradient-bg">
-      <div className="container-custom">
+    <section id="about-section" className="section-padding bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-              About <span className="text-gradient">Glomin Overseas</span>
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+              About Glomin Overseas
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              We Are <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Growth Partners</span>
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-              C&F AGENT/ Authorized DISTRIBUTOR for edible Oil, Sugar, Rice, Spices and Dry Fruits etc. 
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North India. 
               We are growth partners — not just distributors or agents.
             </p>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-secondary-800 mb-4">
-                Your Strategic Partner in Distribution Excellence
-              </h3>
-              <p className="text-lg text-secondary-600 leading-relaxed">
-                Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North India. 
-                We are growth partners — not just distributors or agents. Every brand we take on is nurtured like our own, 
-                with a clear goal of scaling up, solving problems jointly, and driving long-term success.
-              </p>
-              <p className="text-lg text-secondary-600 leading-relaxed">
-                With operational hubs in Delhi-NCR and Bihar, we manage Modern Trade (MT), E-commerce (Ecom), and General Trade (GT) channels. 
-                Our robust distribution infrastructure, adequate manpower, reliable data systems, timely reporting, and smart inventory planning, 
-                makes us capable of servicing even small purchase orders efficiently while maintaining consistent supply.
-              </p>
-              
-              {/* Key Points */}
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-secondary-700">Strategic presence across Delhi-NCR and Bihar</p>
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            {/* Left Column - Main Text */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Every brand we take on is nurtured like our own, with a clear goal of scaling up, solving problems jointly, 
+                  and driving long-term success. With operational hubs in Delhi-NCR and Bihar, we manage Modern Trade (MT), 
+                  E-commerce (Ecom), and General Trade (GT) channels.
+                </p>
+                
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Our robust distribution infrastructure, adequate manpower, reliable data systems, timely reporting, and smart 
+                  inventory planning, makes us capable of servicing even small purchase orders efficiently while maintaining consistent supply.
+                </p>
+
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  We work with multiple brands across categories, helping them grow to the next level while staying fully aligned 
+                  with industry trends such as Quick Commerce, modern retail requirements, and consumer convenience expectations.
+                </p>
+              </div>
+
+              {/* Highlight Box */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Our Commitment</h3>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-secondary-700">Specialized expertise in Modern Trade & E-commerce</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-secondary-700">Own premium nuts and dry fruits under "Glomin" brand</p>
-                </div>
+                <p className="text-blue-100 leading-relaxed">
+                  Alongside partner brands, we also market our own premium nuts and dry fruits under the name "Glomin," 
+                  ensuring quality and consistency across all our offerings.
+                </p>
               </div>
             </div>
 
             {/* Right Column - Visual Elements */}
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl">
-                    <Target className="w-12 h-12 text-primary-600 mx-auto mb-3" />
-                    <h4 className="font-semibold text-primary-800 mb-2">Strategic Focus</h4>
-                    <p className="text-sm text-primary-700">Targeted market penetration</p>
+              {/* Main Card */}
+              <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 relative">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                  2017
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Delhi-NCR Hub</h3>
+                    <p className="text-gray-600">Modern Trade & E-commerce Excellence</p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl">
-                    <Users className="w-12 h-12 text-accent-600 mx-auto mb-3" />
-                    <h4 className="font-semibold text-accent-800 mb-2">Local Expertise</h4>
-                    <p className="text-sm text-accent-700">Deep market understanding</p>
+                  
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Bihar Hub</h3>
+                    <p className="text-gray-600">General Trade & Rural Market Coverage</p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-xl">
-                    <Award className="w-12 h-12 text-secondary-600 mx-auto mb-3" />
-                    <h4 className="font-semibold text-secondary-800 mb-2">Quality Service</h4>
-                    <p className="text-sm text-secondary-700">Consistent excellence</p>
-                  </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl">
-                    <Clock className="w-12 h-12 text-primary-600 mx-auto mb-3" />
-                    <h4 className="font-semibold text-primary-800 mb-2">Timely Delivery</h4>
-                    <p className="text-sm text-primary-700">Reliable distribution</p>
+                  
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">North India</h3>
+                    <p className="text-gray-600">Comprehensive Market Coverage</p>
                   </div>
                 </div>
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-200 rounded-full opacity-20"></div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center shadow-lg">
+                <CheckCircle className="w-8 h-8 text-white" />
+              </div>
+            </div>
+          </div>
+
+          {/* Key Points Grid */}
+          <div className="mb-20">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Why Choose Glomin Overseas?</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {keyPoints.map((point, index) => (
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                  <div className="text-center mb-6">
+                    <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${getColorClasses(point.color)} mb-4 group-hover:scale-110 transition-transform`}>
+                      <point.icon className={`w-10 h-10 ${getIconColor(point.color)}`} />
+                    </div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-3">{point.title}</h4>
+                  </div>
+                  <p className="text-gray-600 text-center leading-relaxed">{point.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Bottom CTA */}
           <div className="text-center">
-            <button className="btn-primary">
-              Learn More About Our Story
-            </button>
+            <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+              <h3 className="text-3xl font-bold mb-4">Ready to Partner with Us?</h3>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join the growing list of successful brands that trust Glomin Overseas as their strategic distribution partner.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
+                  Get Started Today
+                </button>
+                <button className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold py-4 px-8 rounded-xl transition-all duration-300">
+                  Learn More
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
