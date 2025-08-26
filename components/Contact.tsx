@@ -26,8 +26,8 @@ export default function Contact() {
 
   const offices = [
     {
-      name: "Delhi Office",
-      contact: "Bidyapati Jha (Director)",
+      name: "Delhi Office (MT & Ecom)",
+      contact: "Pashupati Jha (Director)",
       phone: "+91-9999132057",
       email: "glominoverseas@gmail.com",
       address: "H.No-33, Naharpur Village, Rohini Sector-7, Delhi – 110085",
@@ -35,8 +35,8 @@ export default function Contact() {
       color: "primary"
     },
     {
-      name: "Bihar Office",
-      contact: "Pashupati Jha (Director)",
+      name: "Bihar Office (GT)",
+      contact: "Mr. Jha (Director)",
       phone: "+91-8527277959 / +91-7296083393",
       email: "glominoverseas.bihar@gmail.com",
       address: "1- Nirbhapur Chowk, Dist. Madhubani – 847236 & 2- Ranti Chowk, Madhubani – 847211",
@@ -77,8 +77,8 @@ export default function Contact() {
               Get in <span className="text-gradient">Touch</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your distribution strategy? Connect with our team of experts 
-              and discover how Glomin Overseas can drive your business growth.
+              Ready to partner with us? Connect with our team of experts and discover how Glomin Overseas 
+              can nurture your brand like our own and drive long-term success across North India.
             </p>
           </div>
 

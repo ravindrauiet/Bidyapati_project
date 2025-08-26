@@ -31,11 +31,11 @@ export default function BusinessModel() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-              Our <span className="text-gradient">Two-Pillar</span> Business Model
+              Our <span className="text-gradient">Two-Pillar</span> Distribution Model
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-              A synergistic approach that combines modern trade efficiency with traditional market expertise, 
-              providing comprehensive coverage across North India.
+              Strategic distribution approach combining Modern Trade & E-commerce expertise in Delhi-NCR 
+              with deep-rooted General Trade understanding in Bihar for comprehensive North India coverage.
             </p>
           </div>
 
@@ -57,8 +57,8 @@ export default function BusinessModel() {
               
               <div className="space-y-4">
                 <p className="text-secondary-700 leading-relaxed">
-                  Our Delhi office serves as the nerve center for Modern Trade and E-commerce operations, 
-                  building strong direct relationships with key players in organized retail.
+                  Our Delhi hub powers Modern Trade and E-commerce distribution with direct retail connections 
+                  ensuring high visibility and uninterrupted availability across Delhi-NCR and North-East India.
                 </p>
                 
                 <div className="space-y-3">
@@ -101,8 +101,8 @@ export default function BusinessModel() {
               
               <div className="space-y-4">
                 <p className="text-secondary-700 leading-relaxed">
-                  Our 2023 expansion to Bihar represents our "Karmbhumi" (land of work), 
-                  where we build trusted distribution networks through cultural understanding.
+                  Our Bihar hub in Madhubani focuses on General Trade distribution, covering a 100-km belt 
+                  up to the Nepal border, ensuring even small village retailers have access to quality FMCG products.
                 </p>
                 
                 <div className="space-y-3">
@@ -111,8 +111,8 @@ export default function BusinessModel() {
                     Business Advantage
                   </h4>
                   <p className="text-sm text-secondary-600 pl-7">
-                    Local roots provide unparalleled advantage in General Trade, with intricate 
-                    understanding of retail dynamics and consumer behavior.
+                    Deep local understanding in Mithila allows us to design effective distribution strategies 
+                    for semi-urban and rural markets with strong roots in the community.
                   </p>
                 </div>
                 
@@ -122,8 +122,8 @@ export default function BusinessModel() {
                     Empowerment Through Business
                   </h4>
                   <p className="text-sm text-secondary-600 pl-7">
-                    We honor our "samajh ka rin" (debt to society) by providing employment 
-                    and contributing to community economic and social well-being.
+                    We believe business success and social responsibility go hand in hand. By creating employment 
+                    and empowering local talent, we build a loyal team while giving back to the community.
                   </p>
                 </div>
               </div>

@@ -1,153 +1,135 @@
 'use client'
 
-import { Mail, Phone, MapPin, Clock, ArrowUp } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export default function Footer() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <footer className="bg-secondary-900 text-white">
       <div className="container-custom py-8 sm:py-12 lg:py-16" style={{padding: '20px'}}>
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {/* Company Info */}
-            <div className="sm:col-span-2">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                <span className="text-gradient">Glomin</span> Overseas
-              </h3>
-              <p className="text-secondary-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Premier distribution and logistics company with strategic presence across North India. 
-                We specialize in providing comprehensive logistics and sales solutions that are 
-                meticulously tailored to the unique demands of different regional markets.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-secondary-300">
-                  <Clock className="w-4 h-4" />
-                  <span className="text-xs sm:text-sm">Mon-Fri 9:00 AM - 6:00 PM</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#about-section" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#services-section" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-                    Our Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#business-model-section" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-                    Business Model
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact-section" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Our Services</h4>
-              <ul className="space-y-2">
-                <li className="text-secondary-300 text-sm sm:text-base">Modern Trade & E-commerce</li>
-                <li className="text-secondary-300 text-sm sm:text-base">General Trade Distribution</li>
-                <li className="text-secondary-300 text-sm sm:text-base">Comprehensive Logistics</li>
-                <li className="text-secondary-300 text-sm sm:text-base">Strategic Partnership</li>
-              </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <h3 className="text-2xl font-bold text-white mb-4">Glomin Overseas</h3>
+            <p className="text-secondary-300 mb-6 leading-relaxed">
+              C&F AGENT/ Authorized DISTRIBUTOR for edible Oil, Sugar, Rice, Spices and Dry Fruits etc. 
+              We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
+              like our own, with a clear goal of scaling up, solving problems jointly, and driving long-term success.
+            </p>
+            <div className="flex space-x-4">
+              <a href="mailto:glominoverseas@gmail.com" className="text-secondary-300 hover:text-white transition-colors">
+                <Mail className="w-5 h-5" />
+              </a>
+              <a href="tel:+919999132057" className="text-secondary-300 hover:text-white transition-colors">
+                <Phone className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Office Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12 p-4 sm:p-6 lg:p-8 bg-secondary-800 rounded-xl">
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/products" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  Our Products
+                </Link>
+              </li>
+              <li>
+                <Link href="/partners" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  Become a Partner
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-secondary-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Products & Services */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Products & Services</h4>
+            <ul className="space-y-2">
+              <li className="text-secondary-300 text-sm sm:text-base">Edible Oil Distribution</li>
+              <li className="text-secondary-300 text-sm sm:text-base">Sugar & Rice Supply</li>
+              <li className="text-secondary-300 text-sm sm:text-base">Spices Distribution</li>
+              <li className="text-secondary-300 text-sm sm:text-base">Premium Dry Fruits</li>
+              <li className="text-secondary-300 text-sm sm:text-base">Own Glomin Brand</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="border-t border-secondary-700 mt-12 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Delhi Office */}
             <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white flex items-center gap-2">
-                <MapPin className="w-4 h-5 text-primary-400" />
-                Delhi Office
-              </h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Delhi Office (MT & Ecom)</h4>
               <div className="space-y-2 text-secondary-300">
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <span className="w-1 h-1 bg-primary-400 rounded-full"></span>
-                  Bidyapati Jha (Director)
+                <p className="flex items-center gap-2">
+                  <span className="font-medium">Pashupati Jha (Director)</span>
                 </p>
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <Phone className="w-4 h-4 text-primary-400" />
-                  +91-9999132057
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+91-9999132057</span>
                 </p>
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <Mail className="w-4 h-4 text-primary-400" />
-                  glominoverseas@gmail.com
+                <p className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>H.No-33, Naharpur Village, Rohini Sector-7, Delhi – 110085</span>
                 </p>
-                <p className="text-xs sm:text-sm">
-                  H.No-33, Naharpur Village, Rohini Sector-7, Delhi – 110085
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <span>glominoverseas@gmail.com</span>
                 </p>
               </div>
             </div>
 
             {/* Bihar Office */}
             <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white flex items-center gap-2">
-                <MapPin className="w-4 h-5 text-accent-400" />
-                Bihar Office
-              </h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Bihar Office (GT)</h4>
               <div className="space-y-2 text-secondary-300">
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <span className="w-1 h-1 bg-accent-400 rounded-full"></span>
-                  Pashupati Jha (Director)
+                <p className="flex items-center gap-2">
+                  <span className="font-medium">Mr. Jha (Director)</span>
                 </p>
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <Phone className="w-4 h-4 text-accent-400" />
-                  +91-8527277959 / +91-7296083393
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+91-8527277959 / +91-7296083393</span>
                 </p>
-                <p className="flex items-center gap-2 text-sm sm:text-base">
-                  <Mail className="w-4 h-4 text-accent-400" />
-                  glominoverseas.bihar@gmail.com
+                <p className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>1- Nirbhapur Chowk, Dist. Madhubani – 847236 & 2- Ranti Chowk, Madhubani – 847211</span>
                 </p>
-                <p className="text-xs sm:text-sm">
-                  1- Nirbhapur Chowk, Dist. Madhubani – 847236 & 2- Ranti Chowk, Madhubani – 847211
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <span>glominoverseas.bihar@gmail.com</span>
                 </p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Footer */}
-          <div className="border-t border-secondary-700 pt-6 sm:pt-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <div className="text-secondary-400 text-xs sm:text-sm text-center sm:text-left">
-                © 2024 Glomin Overseas. All rights reserved. | Established 2017
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <button 
-                  onClick={scrollToTop}
-                  className="p-2 bg-primary-600 hover:bg-primary-700 rounded-full transition-all duration-300 transform hover:scale-110"
-                  aria-label="Scroll to top"
-                >
-                  <ArrowUp className="w-4 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-secondary-700 mt-8 pt-6 text-center">
+          <p className="text-secondary-400 text-sm">
+            © 2024 Glomin Overseas. All rights reserved. | C&F Agent & Authorized Distributor
+          </p>
         </div>
       </div>
     </footer>

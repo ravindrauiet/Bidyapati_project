@@ -34,8 +34,8 @@ export default function About() {
               About <span className="text-gradient">Glomin Overseas</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-              A premier distribution and logistics company with strategic presence across North India, 
-              specializing in comprehensive logistics and sales solutions.
+              C&F AGENT/ Authorized DISTRIBUTOR for edible Oil, Sugar, Rice, Spices and Dry Fruits etc. 
+              We are growth partners — not just distributors or agents.
             </p>
           </div>
 
@@ -47,14 +47,14 @@ export default function About() {
                 Your Strategic Partner in Distribution Excellence
               </h3>
               <p className="text-lg text-secondary-600 leading-relaxed">
-                Established in 2017, Glomin Overseas has built a powerful presence across North India, 
-                serving as a strategic partner for brands looking to expand their market reach. We don't 
-                just distribute products; we build lasting partnerships that drive growth and success.
+                Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North India. 
+                We are growth partners — not just distributors or agents. Every brand we take on is nurtured like our own, 
+                with a clear goal of scaling up, solving problems jointly, and driving long-term success.
               </p>
               <p className="text-lg text-secondary-600 leading-relaxed">
-                Our dual-focused approach combines the efficiency of modern trade operations with the 
-                deep-rooted understanding of traditional markets, ensuring comprehensive coverage and 
-                maximum impact for our brand partners.
+                With operational hubs in Delhi-NCR and Bihar, we manage Modern Trade (MT), E-commerce (Ecom), and General Trade (GT) channels. 
+                Our robust distribution infrastructure, adequate manpower, reliable data systems, timely reporting, and smart inventory planning, 
+                makes us capable of servicing even small purchase orders efficiently while maintaining consistent supply.
               </p>
               
               {/* Key Points */}
@@ -69,7 +69,7 @@ export default function About() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-secondary-700">Deep understanding of General Trade dynamics</p>
+                  <p className="text-secondary-700">Own premium nuts and dry fruits under "Glomin" brand</p>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function About() {
                   <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl">
                     <Clock className="w-12 h-12 text-primary-600 mx-auto mb-3" />
                     <h4 className="font-semibold text-primary-800 mb-2">Timely Delivery</h4>
-                    <p className="text-sm text-primary-700">Reliable logistics</p>
+                    <p className="text-sm text-primary-700">Reliable distribution</p>
                   </div>
                 </div>
               </div>
