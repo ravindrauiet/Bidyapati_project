@@ -1,8 +1,9 @@
 'use client'
 
-import { Target, Users, Globe, Award, TrendingUp, CheckCircle } from 'lucide-react'
+import { Target, Users, Globe, Award, TrendingUp, CheckCircle,ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
-
+import Link from 'next/link'
+import Logo from './Logo'
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -102,7 +103,7 @@ export default function About() {
   }
 
   return (
-    <section id="about-section" className="section-padding bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <section id="about-section" className="section-padding bg-gradient-to-br from-slate-50 via-teal-50 to-blue-100 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -124,6 +125,9 @@ export default function About() {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North India. 
               We are growth partners — not just distributors or agents.
+            </p>
+            <p className="text-lg text-blue-600 font-semibold max-w-4xl mx-auto leading-relaxed mt-4">
+              Driving FMCG Growth in North India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
             </p>
           </div>
 
@@ -198,6 +202,197 @@ export default function About() {
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
             </div>
+          </div>
+  {/* Featured Dry Fruits Section */}
+        <div className="mb-16 bg-gradient-to-r from-amber-100/80 to-orange-100/80 backdrop-blur-md border border-amber-300/50 rounded-2xl p-8 md:p-12 shadow-2xl">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-amber-800 mb-4">Featured: Premium Dry Fruits & Nuts</h3>
+              <p className="text-amber-700 max-w-3xl mx-auto text-lg">
+                Discover our exclusive Glomin brand collection featuring 25+ premium dry fruits and nuts varieties. 
+                Perfect for bulk orders and customized gift packaging.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h4 className="text-xl font-semibold text-amber-800 mb-4">Why Choose Glomin Dry Fruits?</h4>
+                <ul className="space-y-3 text-amber-700">
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span className="font-medium">Premium quality handpicked products</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span className="font-medium">Bulk deals with competitive pricing</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span className="font-medium">Customized gift packs for all occasions</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span className="font-medium">Wedding, corporate & festival specials</span>
+                  </li>
+                </ul>
+                <Link 
+                  href="/products"
+                  className="inline-flex items-center gap-2 mt-6 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  View Dry Fruits Collection
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-3">
+                {Array.from({ length: 6 }, (_, i) => (
+                  <div key={i} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+                    <img 
+                      src={`/images/dry fruits/dryfru${i + 1}.jpg`}
+                      alt={`Premium Dry Fruit ${i + 1}`}
+                      className="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Brand Portfolio & Infrastructure */}
+          <div className="mb-20">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Brand Portfolio & Infrastructure</h3>
+            
+            {/* Brand Logos Section */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
+              <h4 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Our Brand Portfolio</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-600 mb-1">HUL</div>
+                    <div className="text-xs text-gray-600">Hindustan Unilever</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Emami</div>
+                    <div className="text-xs text-gray-600">Healthy & Tasty</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-600 mb-1">Best Choice</div>
+                    <div className="text-xs text-gray-600">Refined Soybean Oil</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Catch</div>
+                    <div className="text-xs text-gray-600">Spices</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Pansari</div>
+                    <div className="text-xs text-gray-600">Oil | Rice | Atta | Spices</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Fena</div>
+                    <div className="text-xs text-gray-600">फेना ही लेना</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-green-600 mb-1">Granola</div>
+                    <div className="text-xs text-gray-600">Premium</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Sparsh</div>
+                    <div className="text-xs text-gray-600">Quality</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-yellow-600 mb-1">Mother's Recipe</div>
+                    <div className="text-xs text-gray-600">Taste The Love</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">MTR</div>
+                    <div className="text-xs text-gray-600">Foods</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-orange-600 mb-1">Eastern</div>
+                    <div className="text-xs text-gray-600">Products</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-600 mb-1">Nova</div>
+                    <div className="text-xs text-gray-600">Dairy Products</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-600 mb-1">Kidys</div>
+                    <div className="text-xs text-gray-600">Bakery</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Lijjat</div>
+                    <div className="text-xs text-gray-600">पापड़</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-green-600 mb-1">DS Group</div>
+                    <div className="text-xs text-gray-600">Premium</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-green-600 mb-1">Marvel</div>
+                    <div className="text-xs text-gray-600">Tea</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600 mb-1">Orkla</div>
+                    <div className="text-xs text-gray-600">India</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-gray-800 mb-1">Wicked Gud</div>
+                    <div className="text-xs text-gray-600">Premium</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-center text-gray-600 mt-6">We partner with leading FMCG brands across categories including Edible Oils, Rice, Sugar, Spices, Dry Fruits, FMCG & Cosmetics</p>
+            </div>
+
+            {/* Warehouse Images Section - Commented Out */}
+            {/*
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
+              <h4 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Our Infrastructure</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-gray-100 rounded-lg p-6 h-48 flex items-center justify-center">
+                  <p className="text-gray-500 text-center">Delhi-NCR Warehouse Image</p>
+                </div>
+                <div className="bg-gray-100 rounded-lg p-6 h-48 flex items-center justify-center">
+                  <p className="text-gray-500 text-center">Bihar Warehouse Image</p>
+                </div>
+              </div>
+              <p className="text-center text-gray-600 mt-4">Strategic warehouse locations for efficient distribution</p>
+            </div>
+            */}
           </div>
 
           {/* Key Points Grid */}

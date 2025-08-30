@@ -99,6 +99,10 @@
   .animate-bounce-slow {
     animation: bounce 3s infinite;
   }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
 }
 
 /* Custom Animations */
@@ -192,6 +196,35 @@
 .hover-lift:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll-triggered animations */
+.scroll-triggered-scale {
+  transition: transform 0.5s ease-out;
+}
+
+.scroll-triggered-scale:hover {
+  transform: scale(var(--scroll-scale, 1.1)) rotate(var(--scroll-rotate, 2deg));
+}
+
+.scroll-triggered-transform {
+  transition: all 0.5s ease-out;
+}
+
+/* Enhanced scroll effects */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-triggered-scale {
+    animation: subtle-float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
 }
 
 /* Custom Scrollbar */

@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, Mail, MapPin, Clock, User, Building } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, User, Building, Globe } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Contact() {
@@ -27,10 +27,11 @@ export default function Contact() {
   const offices = [
     {
       name: "Delhi Office (MT & Ecom)",
-      contact: "Pashupati Jha (Director)",
+      contact: "Bidyapati Jha (Director)",
       phone: "+91-9999132057",
       email: "glominoverseas@gmail.com",
       address: "H.No-33, Naharpur Village, Rohini Sector-7, Delhi – 110085",
+      website: "www.glomin.in",
       icon: Building,
       color: "primary"
     },
@@ -186,6 +187,14 @@ export default function Contact() {
                           <Mail className="w-4 h-4 text-primary-500" />
                           <span>{office.email}</span>
                         </div>
+                        {office.website && (
+                          <div className="flex items-center gap-3 text-sm text-secondary-700">
+                            <Globe className="w-4 h-4 text-primary-500" />
+                            <a href={`https://${office.website}`} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">
+                              {office.website}
+                            </a>
+                          </div>
+                        )}
                         <div className="flex items-start gap-3 text-sm text-secondary-700">
                           <MapPin className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                           <span>{office.address}</span>
