@@ -95,7 +95,7 @@ export default function DryFruitsGallery() {
       {/* Fullscreen Modal */}
       {isFullscreen && selectedImage && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-7xl max-h-full">
+          <div className="relative w-full h-full flex items-center justify-center">
             {/* Close Button */}
             <button
               onClick={closeFullscreen}
@@ -125,12 +125,15 @@ export default function DryFruitsGallery() {
               </svg>
             </button>
 
-            {/* Main Image */}
-            <img 
-              src={`/images/dry fruits/dryfru${selectedImage}.jpg`}
-              alt={`Premium Dry Fruit ${selectedImage}`}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-            />
+            {/* Main Image Container */}
+            <div className="w-full h-full flex items-center justify-center p-8">
+              <img 
+                src={`/images/dry fruits/dryfru${selectedImage}.jpg`}
+                alt={`Premium Dry Fruit ${selectedImage}`}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                style={{ maxWidth: '90vw', maxHeight: '80vh' }}
+              />
+            </div>
 
             {/* Image Info */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full">
