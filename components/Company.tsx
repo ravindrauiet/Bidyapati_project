@@ -87,7 +87,7 @@ export default function Company() {
       expertise: "Modern Trade & E-commerce",
       education: "Master in Commerce and CS",
       experience: "Deep expertise in structured business management and compliance",
-      phone: "+91-9999132057",
+      phone: "+91-8527104727",
       email: "glominoverseas@gmail.com"
     },
     {
@@ -97,7 +97,7 @@ export default function Company() {
       expertise: "General Trade Distribution",
       education: "15+ years FMCG experience",
       experience: "From frontline salesman to Business Head positions with reputed companies",
-      phone: "+91-8527277959",
+      phone: "+91-9310785269",
       email: "glominoverseas.bihar@gmail.com"
     }
   ]
