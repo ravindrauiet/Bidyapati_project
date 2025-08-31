@@ -1,10 +1,22 @@
 'use client'
 
-import { Phone, Mail, MapPin, Clock, User, Building, Globe } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, User, Building, Globe, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { FormSkeleton } from './LoadingSkeleton'
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    subject: '',
+    message: ''
+  })
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,6 +80,61 @@ export default function Contact() {
     }
   }
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      // Track form submission
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submit', {
+          form_name: 'contact_form',
+          event_category: 'engagement'
+        })
+      }
+
+      setSubmitStatus('success')
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        subject: '',
+        message: ''
+      })
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const isFormValid = formData.firstName && formData.email && formData.message
+
+  if (!isVisible) {
+    return <FormSkeleton />
+  }
+
   return (
     <section id="contact-section" className="section-padding bg-white">
       <div className="container-custom">
@@ -91,156 +158,247 @@ export default function Contact() {
                 Send us a Message
               </h3>
               
-              <form className="space-y-6">
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-green-800 font-medium">
+                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                  </span>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-600" />
+                  <span className="text-red-800 font-medium">
+                    Something went wrong. Please try again or contact us directly.
+                  </span>
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-secondary-700 mb-2">
-                      First Name
+                    <label htmlFor="firstName" className="block text-sm font-medium text-secondary-700 mb-2">
+                      First Name *
                     </label>
                     <input
+                      id="firstName"
+                      name="firstName"
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Your first name"
+                      required
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      placeholder="Enter your first name"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-secondary-700 mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-secondary-700 mb-2">
                       Last Name
                     </label>
                     <input
+                      id="lastName"
+                      name="lastName"
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Your last name"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      placeholder="Enter your last name"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                    placeholder="your.email@company.com"
-                  />
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      placeholder="Enter your email address"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      placeholder="Enter your phone number"
+                      disabled={isSubmitting}
+                    />
+                  </div>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Your company name"
-                  />
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-secondary-700 mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      placeholder="Enter your company name"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 mb-2">
+                      Subject
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="business-partnership">Business Partnership</option>
+                      <option value="product-inquiry">Product Inquiry</option>
+                      <option value="bulk-order">Bulk Order</option>
+                      <option value="general-inquiry">General Inquiry</option>
+                      <option value="support">Support</option>
+                    </select>
+                  </div>
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-2">
-                    Message
+                  <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
+                    Message *
                   </label>
                   <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Tell us about your distribution needs..."
-                  ></textarea>
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="Tell us about your inquiry or partnership interest..."
+                    disabled={isSubmitting}
+                  />
                 </div>
-                
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
+
+                <button
+                  type="submit"
+                  disabled={!isFormValid || isSubmitting}
+                  className={`w-full flex items-center justify-center gap-3 py-4 px-8 rounded-lg font-semibold transition-all duration-300 ${
+                    isSubmitting || !isFormValid
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-primary-600 hover:bg-primary-700 text-white transform hover:scale-105 shadow-lg hover:shadow-xl'
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending Message...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
 
             {/* Right Column - Office Information */}
-            <div className="space-y-6">
-              <div className="card">
-                <h3 className="text-2xl font-bold text-secondary-900 mb-6">
-                  Our Offices
-                </h3>
-                
-                <div className="space-y-6">
-                  {offices.map((office, index) => (
-                    <div key={index} className="border-l-4 border-primary-500 pl-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${getColorClasses(office.color)}`}>
-                          <office.icon className={`w-6 h-6 ${getIconColor(office.color)}`} />
+            <div className="space-y-8">
+              {offices.map((office, index) => (
+                <div key={index} className={`card ${getColorClasses(office.color)}`}>
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center ${getColorClasses(office.color)}`}>
+                      <office.icon className={`w-6 h-6 ${getIconColor(office.color)}`} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-semibold mb-3">{office.name}</h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <User className="w-4 h-4 text-secondary-500" />
+                          <span className="text-sm">{office.contact}</span>
                         </div>
-                        <div>
-                          <h4 className="text-lg font-semibold text-secondary-900">
-                            {office.name}
-                          </h4>
-                          <p className="text-sm text-secondary-600">
-                            {office.contact}
-                          </p>
+                        <div className="flex items-center gap-3">
+                          <Phone className="w-4 h-4 text-secondary-500" />
+                          <a href={`tel:${office.phone}`} className="text-sm hover:text-primary-600 transition-colors">
+                            {office.phone}
+                          </a>
                         </div>
-                      </div>
-                      
-                      <div className="space-y-3 ml-15">
-                        <div className="flex items-center gap-3 text-sm text-secondary-700">
-                          <Phone className="w-4 h-4 text-primary-500" />
-                          <span>{office.phone}</span>
+                        <div className="flex items-center gap-3">
+                          <Mail className="w-4 h-4 text-secondary-500" />
+                          <a href={`mailto:${office.email}`} className="text-sm hover:text-primary-600 transition-colors">
+                            {office.email}
+                          </a>
                         </div>
-                        <div className="flex items-center gap-3 text-sm text-secondary-700">
-                          <Mail className="w-4 h-4 text-primary-500" />
-                          <span>{office.email}</span>
+                        <div className="flex items-start gap-3">
+                          <MapPin className="w-4 h-4 text-secondary-500 mt-0.5" />
+                          <span className="text-sm leading-relaxed">{office.address}</span>
                         </div>
                         {office.website && (
-                          <div className="flex items-center gap-3 text-sm text-secondary-700">
-                            <Globe className="w-4 h-4 text-primary-500" />
-                            <a href={`https://${office.website}`} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">
+                          <div className="flex items-center gap-3">
+                            <Globe className="w-4 h-4 text-secondary-500" />
+                            <a 
+                              href={`https://${office.website}`} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm hover:text-primary-600 transition-colors"
+                            >
                               {office.website}
                             </a>
                           </div>
                         )}
-                        <div className="flex items-start gap-3 text-sm text-secondary-700">
-                          <MapPin className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                          <span>{office.address}</span>
-                        </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Contact Info */}
-              <div className="card bg-gradient-to-br from-primary-50 to-primary-100 border-primary-200">
-                <h4 className="text-lg font-semibold text-primary-800 mb-4">
-                  Quick Contact
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-primary-700">
-                    <Clock className="w-4 h-4" />
-                    <span>Business Hours: Mon-Fri 9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-primary-700">
-                    <User className="w-4 h-4" />
-                    <span>Response Time: Within 24 hours</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              ))}
 
-          {/* Bottom CTA */}
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 md:p-12 text-white">
-              <h3 className="text-3xl font-bold mb-4">
-                Ready to Start Your Journey?
-              </h3>
-              <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-                Join the growing list of successful brands that trust Glomin Overseas 
-                for their distribution and logistics needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                  Schedule a Call
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
-                  Download Brochure
-                </button>
+              {/* Business Hours */}
+              <div className="card bg-gradient-to-r from-primary-50 to-accent-50 border-primary-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-semibold mb-3 text-primary-800">Business Hours</h4>
+                    <div className="space-y-2 text-primary-700">
+                      <div className="flex justify-between">
+                        <span>Monday - Friday:</span>
+                        <span>9:00 AM - 6:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Saturday:</span>
+                        <span>9:00 AM - 2:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Sunday:</span>
+                        <span>Closed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
