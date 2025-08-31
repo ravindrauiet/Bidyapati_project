@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +18,13 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-3">
-              <Logo size="sm" />
+              <Image 
+                src="/images/dry fruits/logo1.jpg" 
+                alt="Glomin Overseas Logo" 
+                width={62} 
+                height={62} 
+                className="rounded-full"
+              />
               <span className="text-2xl font-bold text-blue-600">Glomin Overseas</span>
             </Link>
           </div>

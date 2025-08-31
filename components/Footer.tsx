@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react'
 
 export default function Footer() {
@@ -10,7 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">Glomin Overseas</h3>
+            <div className="flex items-center gap-3 mb-4 ">
+              <Image 
+                src="/images/dry fruits/logo1.jpg" 
+                alt="Glomin Overseas Logo" 
+                width={80} 
+                height={80} 
+                className="rounded-full"
+              />
+              <h3 className="text-2xl font-bold text-white">Glomin Overseas</h3>
+            </div>
             <p className="text-secondary-300 mb-6 leading-relaxed"> 
               We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
               like our own, with a clear goal of scaling up, solving problems jointly, and driving long-term success.
@@ -142,7 +152,7 @@ export default function Footer() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91-8527277959 / +91-7296083393</span>
+                  <span>+91-9310785269 / +91-7011281171</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />

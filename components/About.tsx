@@ -3,7 +3,7 @@
 import { Target, Users, Globe, Award, TrendingUp, CheckCircle,ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
+
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
 

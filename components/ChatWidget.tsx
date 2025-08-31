@@ -2,6 +2,7 @@
 
 import { MessageCircle, X, Send, Phone, Mail } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -95,9 +96,18 @@ export default function ChatWidget() {
           {/* Header */}
           <div className="bg-gradient-to-r from-teal-600 to-blue-600 text-white p-4 rounded-t-2xl">
             <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-semibold">Glomin Overseas</h3>
-                <p className="text-sm text-primary-100">Customer Support</p>
+              <div className="flex items-center gap-3">
+                <Image 
+                  src="/images/dry fruits/logo.png" 
+                  alt="Glomin Overseas Logo" 
+                  width={24} 
+                  height={24} 
+                  className="rounded-full"
+                />
+                <div>
+                  <h3 className="font-semibold">Glomin Overseas</h3>
+                  <p className="text-sm text-primary-100">Customer Support</p>
+                </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
