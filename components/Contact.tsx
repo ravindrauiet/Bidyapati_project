@@ -146,7 +146,7 @@ export default function Contact() {
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
               Ready to partner with us? Connect with our team of experts and discover how Glomin Overseas 
-              can nurture your brand like our own and drive long-term success across North India.
+              can nurture your brand like our own and drive long-term success across North East India.
             </p>
           </div>
 

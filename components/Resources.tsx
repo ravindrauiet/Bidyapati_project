@@ -58,7 +58,7 @@ export default function Resources() {
       category: "Market Insights",
       items: [
         {
-          title: "North India Market Report",
+          title: "North East India Market Report",
           description: "Analysis of FMCG distribution opportunities in Delhi-NCR and Bihar",
           type: "PDF",
           size: "3.1 MB",
@@ -96,7 +96,7 @@ export default function Resources() {
         },
         {
           title: "Spices Distribution Case Study",
-          description: "Strategic partnership that expanded market reach across North India",
+          description: "Strategic partnership that expanded market reach across North East India",
           type: "PDF",
           size: "2.1 MB",
           icon: BookOpen,
@@ -236,7 +236,7 @@ export default function Resources() {
                 </div>
                 <h4 className="text-xl font-semibold text-secondary-800 mb-3 text-center">Market Analysis</h4>
                 <p className="text-secondary-600 text-center mb-4">
-                  Comprehensive analysis of North India FMCG distribution
+                  Comprehensive analysis of North East India FMCG distribution
                 </p>
                 <button className="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
                   Download Report

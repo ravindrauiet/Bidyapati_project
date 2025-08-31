@@ -82,7 +82,7 @@ export default function Careers() {
               Join <span className="text-gradient">Glomin Overseas</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-              Be part of our growth story as we expand our distribution network across North India. 
+              Be part of our growth story as we expand our distribution network across North East India. 
               We're looking for passionate professionals who share our vision of strategic partnerships.
             </p>
           </div>

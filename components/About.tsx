@@ -123,11 +123,11 @@ export default function About() {
               We Are <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Growth Partners</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North India. 
+              Founded in 2017, Glomin Overseas is a focused FMCG food products distribution company with a strong presence across North East India. 
               We are growth partners — not just distributors or agents.
             </p>
             <p className="text-lg text-blue-600 font-semibold max-w-4xl mx-auto leading-relaxed mt-4">
-              Driving FMCG Growth in North India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
+              Driving FMCG Growth in North East India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
             </p>
           </div>
 
@@ -188,7 +188,7 @@ export default function About() {
                   </div>
                   
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">North India</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">North East India</h3>
                     <p className="text-gray-600">Comprehensive Market Coverage</p>
                   </div>
                 </div>

@@ -233,7 +233,7 @@ export default function Partners() {
                   </div>
                 </div>
                 <p className="text-secondary-700 italic mb-4">
-                  "Glomin Overseas transformed our distribution network in North India. Their strategic approach 
+                  "Glomin Overseas transformed our distribution network in North East India. Their strategic approach 
                   and deep market understanding helped us achieve 40% growth in just 18 months."
                 </p>
                 <div className="text-sm text-secondary-600">

@@ -149,7 +149,7 @@ export default function BusinessModel() {
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">Market Penetration</h4>
                 <p className="text-gray-600 text-center leading-relaxed">
-                  Deep penetration into both urban and rural markets, ensuring comprehensive coverage across North India.
+                  Deep penetration into both urban and rural markets, ensuring comprehensive coverage across North East India.
                 </p>
               </div>
 
@@ -231,7 +231,7 @@ export default function BusinessModel() {
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
               <h3 className="text-3xl font-bold mb-4">Ready to Experience Our Distribution Excellence?</h3>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Partner with us to leverage our two-pillar distribution model and expand your market reach across North India.
+                Partner with us to leverage our two-pillar distribution model and expand your market reach across North East India.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">

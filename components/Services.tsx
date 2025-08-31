@@ -106,7 +106,7 @@ export default function Services() {
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
               Strategic distribution of premium FMCG products including edible oils, sugar, rice, spices, 
-              and our own Glomin brand of dry fruits across North India.
+              and our own Glomin brand of dry fruits across North East India.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ export default function Services() {
             </h3>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
               Experience the power of strategic distribution partnership that nurtures your brand 
-              like our own and drives long-term success across North India.
+              like our own and drives long-term success across North East India.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">

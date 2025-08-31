@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+919999132057'
+    const phoneNumber = '+918527277959'
     const message = 'Hello! I\'m interested in learning more about Glomin Overseas products and services.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')

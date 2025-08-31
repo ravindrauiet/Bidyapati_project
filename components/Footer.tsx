@@ -11,8 +11,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">Glomin Overseas</h3>
-            <p className="text-secondary-300 mb-6 leading-relaxed">
-              C&F AGENT/ Authorized DISTRIBUTOR for edible Oil, Sugar, Rice, Spices and Dry Fruits etc. 
+            <p className="text-secondary-300 mb-6 leading-relaxed"> 
               We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
               like our own, with a clear goal of scaling up, solving problems jointly, and driving long-term success.
             </p>
@@ -111,11 +110,11 @@ export default function Footer() {
               <h4 className="text-lg font-semibold text-white mb-4">Delhi Office (MT & Ecom)</h4>
               <div className="space-y-2 text-secondary-300">
                 <p className="flex items-center gap-2">
-                  <span className="font-medium">Bidyapati Jha (Director)</span>
+                  <span className="font-medium">Mr. Pashupati Jha (Director)</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91-9999132057</span>
+                  <span>+91-8527104727</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />

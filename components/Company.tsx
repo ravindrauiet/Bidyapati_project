@@ -75,7 +75,7 @@ export default function Company() {
     {
       year: "2024",
       title: "Strategic Growth",
-      description: "Established as a leading C&F Agent across North India"
+      description: "Established as a leading C&F Agent across North East India"
     }
   ]
 
@@ -139,7 +139,7 @@ export default function Company() {
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
               Founded in 2017, we are a focused FMCG food products distribution company with a strong presence 
-              across North India, serving as strategic partners for brands looking to expand their market reach.
+              across North East India, serving as strategic partners for brands looking to expand their market reach.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ export default function Company() {
                 </p>
                 <p className="text-lg text-secondary-600 leading-relaxed mb-6">
                   Starting with a small team in Delhi, we've grown into a comprehensive distribution network 
-                  covering Modern Trade, E-commerce, and General Trade channels across North India.
+                  covering Modern Trade, E-commerce, and General Trade channels across North East India.
                 </p>
                 <p className="text-lg text-secondary-600 leading-relaxed">
                   Today, we're proud to be the trusted partner for numerous FMCG brands, helping them achieve 
@@ -297,7 +297,7 @@ export default function Company() {
                 <h3 className="text-2xl font-bold text-secondary-900 mb-4">Our Vision</h3>
               </div>
               <p className="text-secondary-600 leading-relaxed">
-                To become the leading strategic distribution partner across North India, known for innovation, 
+                To become the leading strategic distribution partner across North East India, known for innovation, 
                 reliability, and the ability to transform brands into market leaders through strategic partnerships.
               </p>
             </div>

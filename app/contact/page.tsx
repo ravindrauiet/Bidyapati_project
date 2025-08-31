@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ['contact Glomin Overseas', 'Delhi office', 'Bihar office', 'distribution partnership', 'bulk orders', 'business inquiry', 'customer support'],
   openGraph: {
     title: 'Contact Glomin Overseas - Get In Touch',
-    description: 'Connect with our team for distribution partnerships, bulk orders, and business inquiries. We\'re here to help grow your business across North India.',
+    description: 'Connect with our team for distribution partnerships, bulk orders, and business inquiries. We\'re here to help grow your business across North East India.',
     url: 'https://glomin.in/contact',
   },
   alternates: {

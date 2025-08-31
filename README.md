@@ -1,6 +1,6 @@
 # Glomin Overseas Website
 
-A modern, professional website for Glomin Overseas - a premier distribution and logistics company with strategic presence across North India.
+A modern, professional website for Glomin Overseas - a premier distribution and logistics company with strategic presence across North East India.
 
 ## 🚀 Features
 

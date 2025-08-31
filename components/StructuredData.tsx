@@ -15,7 +15,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "name": "Glomin Overseas",
           "url": "https://glomin.in",
           "logo": "https://glomin.in/logo.png",
-          "description": "Glomin Overseas is a premier distribution and logistics company with strategic presence across North India, specializing in Modern Trade, E-commerce, and General Trade solutions.",
+          "description": "Glomin Overseas is a premier distribution and logistics company with strategic presence across North East India, specializing in Modern Trade, E-commerce, and General Trade solutions.",
           "foundingDate": "2017",
           "address": {
             "@type": "PostalAddress",
@@ -82,7 +82,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "@type": "WebSite",
           "name": "Glomin Overseas",
           "url": "https://glomin.in",
-          "description": "Premier distribution and logistics company with strategic presence across North India",
+          "description": "Premier distribution and logistics company with strategic presence across North East India",
           "publisher": {
             "@type": "Organization",
             "name": "Glomin Overseas"

@@ -19,10 +19,10 @@ export default function ChatWidget() {
   const autoReplies = {
     'product': "We offer a wide range of products including Edible Oils, Sugar, Rice, Spices, and our premium Glomin brand Dry Fruits. Would you like to know more about any specific category?",
     'price': "Our pricing is competitive and varies based on quantity and product category. For bulk orders and customized gift packs, please contact us directly for special pricing.",
-    'delivery': "We provide delivery across North India through our strategic hubs in Delhi-NCR and Bihar. Delivery time depends on your location and order size.",
+          'delivery': "We provide delivery across North East India through our strategic hubs in Delhi-NCR and Bihar. Delivery time depends on your location and order size.",
     'bulk': "Yes, we offer excellent bulk deals for all our products, especially our Glomin brand dry fruits. We also provide customized gift packs for weddings, corporate events, and festivals.",
-    'contact': "You can reach us at:\nDelhi Office: +91-9999132057\nBihar Office: +91-8527277959\nEmail: glominoverseas@gmail.com\nWebsite: www.glomin.in",
-    'partnership': "We're always looking for new brand partnerships! We help brands scale up and grow in the North India market. Please share your requirements and we'll get back to you within 24 hours."
+    'contact': "You can reach us at:\nDelhi Office: +91 8527277959\nBihar Office: +91 8527277959\nEmail: glominoverseas@gmail.com\nWebsite: www.glomin.in",
+          'partnership': "We're always looking for new brand partnerships! We help brands scale up and grow in the North East India market. Please share your requirements and we'll get back to you within 24 hours."
   }
 
   const generateAutoReply = (message: string) => {
@@ -41,7 +41,7 @@ export default function ChatWidget() {
     } else if (lowerMessage.includes('partner') || lowerMessage.includes('distribute') || lowerMessage.includes('brand')) {
       return autoReplies.partnership
     } else {
-      return "Thank you for your message! Our team will get back to you within 24 hours. For immediate assistance, please call us at +91-8527104727."
+      return "Thank you for your message! Our team will get back to you within 24 hours. For immediate assistance, please call us at +91 8527277959."
     }
   }
 

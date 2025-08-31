@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     default: 'Glomin Overseas - Premier Distribution & Logistics Company',
     template: '%s | Glomin Overseas'
   },
-  description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North India, specializing in Modern Trade, E-commerce, and General Trade solutions.',
-  keywords: ['distribution', 'logistics', 'Modern Trade', 'E-commerce', 'General Trade', 'North India', 'Delhi', 'Bihar', 'FMCG', 'dry fruits', 'edible oils', 'sugar', 'rice', 'spices'],
+      description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North East India, specializing in Modern Trade, E-commerce, and General Trade solutions.',
+      keywords: ['distribution', 'logistics', 'Modern Trade', 'E-commerce', 'General Trade', 'North East India', 'Delhi', 'Bihar', 'FMCG', 'dry fruits', 'edible oils', 'sugar', 'rice', 'spices'],
   authors: [{ name: 'Glomin Overseas', url: 'https://glomin.in' }],
   creator: 'Glomin Overseas',
   publisher: 'Glomin Overseas',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://glomin.in',
     title: 'Glomin Overseas - Premier Distribution & Logistics Company',
-    description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North India.',
+    description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North East India.',
     siteName: 'Glomin Overseas',
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Glomin Overseas - Premier Distribution & Logistics Company',
-    description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North India.',
+    description: 'Glomin Overseas is a premier distribution and logistics company with strategic presence across North East India.',
     images: ['/og-image.jpg'],
   },
   robots: {

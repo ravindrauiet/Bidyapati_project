@@ -60,11 +60,11 @@ export default function Hero() {
           {/* Main Description */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 backdrop-blur-md border border-amber-400/20 rounded-2xl p-8 mb-6 shadow-2xl shadow-amber-500/10">
-              <p className="text-xl md:text-2xl text-gray-800 font-semibold mb-4 leading-relaxed">
+              {/* <p className="text-xl md:text-2xl text-gray-800 font-semibold mb-4 leading-relaxed">
                 C&F AGENT/ Authorized DISTRIBUTOR for Edible Oil, Sugar, Rice, Spices and Dry Fruits
-              </p>
+              </p> */}
               <p className="text-lg md:text-xl text-amber-700 font-medium mb-4 leading-relaxed">
-                Driving FMCG Growth in North India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
+                Driving FMCG Growth in North East India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
               </p>
             </div>
             <p className="text-lg text-gray-600 leading-relaxed font-light max-w-3xl mx-auto">
@@ -85,7 +85,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-3 text-gray-800 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-md border border-orange-400/30 rounded-full px-4 py-2 shadow-lg shadow-orange-500/20 hover:scale-105 transition-all duration-300">
               <Users className="w-5 h-5 text-orange-400" />
-              <span className="text-gray-800 font-semibold text-sm">North India Coverage</span>
+                              <span className="text-gray-800 font-semibold text-sm">North East India Coverage</span>
             </div>
           </div>
 
