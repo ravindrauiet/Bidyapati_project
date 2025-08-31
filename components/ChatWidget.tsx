@@ -22,7 +22,7 @@ export default function ChatWidget() {
     'price': "Our pricing is competitive and varies based on quantity and product category. For bulk orders and customized gift packs, please contact us directly for special pricing.",
           'delivery': "We provide delivery across North East India through our strategic hubs in Delhi-NCR and Bihar. Delivery time depends on your location and order size.",
     'bulk': "Yes, we offer excellent bulk deals for all our products, especially our Glomin brand dry fruits. We also provide customized gift packs for weddings, corporate events, and festivals.",
-    'contact': "You can reach us at:\nDelhi Office: +91 8527277959\nBihar Office: +91 8527277959\nEmail: glominoverseas@gmail.com\nWebsite: www.glomin.in",
+    'contact': "You can reach us at:\nDelhi Office: +91 8527277959\nBihar Office: +91-9310785269 / +91-7011281171\nEmail: glominoverseas@gmail.com\nWebsite: www.glomin.in",
           'partnership': "We're always looking for new brand partnerships! We help brands scale up and grow in the North East India market. Please share your requirements and we'll get back to you within 24 hours."
   }
 

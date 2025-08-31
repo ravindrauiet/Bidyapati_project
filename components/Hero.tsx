@@ -62,8 +62,8 @@ export default function Hero() {
 
           {/* Main Description */}
           <div className="max-w-4xl mx-auto mb-8">
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-4 shadow-lg">
-              <p className="text-2xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-relaxed">
+            <div className="bg-secondary-900 text-white border border-blue-200 rounded-2xl p-6 mb-4 shadow-lg">
+              <p className="text-2xl md:text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
                 Driving FMCG Growth in North East India.
               </p>
               <p> Your trusted C&F Agent, Super Stockist, and Authorized Distributor.</p>
