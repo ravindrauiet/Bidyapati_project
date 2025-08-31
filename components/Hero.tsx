@@ -63,9 +63,10 @@ export default function Hero() {
           {/* Main Description */}
           <div className="max-w-4xl mx-auto mb-8">
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-4 shadow-lg">
-              <p className="text-lg md:text-xl text-gray-800 font-semibold leading-relaxed">
-                Driving FMCG Growth in North East India. Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
+              <p className="text-2xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-relaxed">
+                Driving FMCG Growth in North East India.
               </p>
+              <p> Your trusted C&F Agent, Super Stockist, and Authorized Distributor.</p>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed font-medium max-w-3xl mx-auto">
               We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
