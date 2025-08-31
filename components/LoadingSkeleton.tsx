@@ -1,6 +1,6 @@
 'use client'
 
-import { Skeleton } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 
 interface SkeletonProps {
   className?: string
@@ -133,7 +133,7 @@ export default function LoadingSkeleton() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
-        <Skeleton className="w-16 h-16 mx-auto mb-4 animate-spin" />
+        <Loader2 className="w-16 h-16 mx-auto mb-4 animate-spin" />
         <div className="text-gray-600">Loading...</div>
       </div>
     </div>
