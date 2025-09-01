@@ -32,139 +32,222 @@ export default function Hero() {
       <div className="absolute bottom-32 left-1/4 w-20 h-20 border border-blue-200/25 rounded-full opacity-20"></div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="relative z-10 container mx-auto px-4 py-12">
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
-          {/* Company Badge */}
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full px-6 py-3 mb-6 shadow-lg">
-            <div className="w-2 h-2 bg-blue-200 rounded-full"></div>
-            <span className="font-semibold text-sm tracking-wide">Trusted Since 2017</span>
-            <div className="w-2 h-2 bg-indigo-200 rounded-full"></div>
-          </div>
-
-          {/* Logo and Title */}
-          <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-white-600 to-indigo-600 rounded-full mb-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          {/* Top Section - Company Badge and Logo */}
+          <div className="flex items-center justify-center mb-8 gap-4 mt-4">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full px-6 py-3 shadow-lg">
+              <div className="w-2 h-2 bg-blue-200 rounded-full"></div>
+              <span className="font-semibold text-sm tracking-wide">Trusted Since 2017</span>
+              <div className="w-2 h-2 bg-indigo-200 rounded-full"></div>
+            </div>
+            <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-white-600 to-indigo-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               <Image 
                 src="/images/dry fruits/logo.png" 
                 alt="Glomin Overseas Logo" 
-                width={80} 
-                height={80} 
+                width={60} 
+                height={60} 
                 className="rounded-full"
               />
             </div>
-            <h2 className="text-xl text-blue-600 font-light mb-2 tracking-wider">Welcome to</h2>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 mb-4 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Glomin</span>{' '}
-              <span className="text-gray-800">Overseas</span>
-            </h1>
           </div>
 
-          {/* Main Description */}
-          <div className="max-w-4xl mx-auto mb-8">
-            <div className="bg-secondary-900 text-white border border-blue-200 rounded-2xl p-6 mb-4 shadow-lg">
-              <p className="text-2xl md:text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
-                Driving FMCG Growth in North East India.
+          {/* Main Horizontal Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center mb-8">
+            
+            {/* Left Side - Main Content (2 columns) */}
+            <div className="lg:col-span-2 text-left">
+              <h2 className="text-lg text-blue-600 font-light mb-2 tracking-wider">Welcome to</h2>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Glomin</span>{' '}
+                <span className="text-gray-800">Overseas</span>
+              </h1>
+              
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-8 mb-6 shadow-xl">
+                <p className="text-2xl md:text-4xl text-white font-bold leading-tight mb-3">
+                  Driving FMCG Growth in North East India.
+                </p>
+                <p className="text-xl text-blue-100 font-medium">
+                  Your trusted C&F Agent, Super Stockist, and Authorized Distributor.
+                </p>
+              </div>
+
+              <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+                We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
+                like our own, with a clear goal of scaling up, solving problems jointly, and driving long-term success.
               </p>
-              <p> Your trusted C&F Agent, Super Stockist, and Authorized Distributor.</p>
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed font-medium max-w-3xl mx-auto">
-              We are growth partners — not just distributors or agents. Every brand we take on is nurtured 
-              like our own, with a clear goal of scaling up, solving problems jointly, and driving long-term success.
-            </p>
-          </div>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
-            <div className="flex items-center gap-3 text-gray-800 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300">
-              <CheckCircle className="w-5 h-5 text-green-600" />
-              <span className="font-semibold text-sm">Authorized Distributor</span>
-            </div>
-            <div className="flex items-center gap-3 text-gray-800 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300">
-              <Award className="w-5 h-5 text-blue-600" />
-              <span className="font-semibold text-sm">Established 2017</span>
-            </div>
-            <div className="flex items-center gap-3 text-gray-800 bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-full px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300">
-              <Users className="w-5 h-5 text-purple-600" />
-              <span className="text-gray-800 font-semibold text-sm">North East India Coverage</span>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/partners" className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg border border-blue-500">
-              Partner With Us
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-            </Link>
-            <Link href="/products" className="group bg-white hover:bg-gray-50 text-gray-800 font-bold py-3 px-6 rounded-xl border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 flex items-center justify-center gap-3 text-lg hover:scale-105 shadow-lg hover:shadow-xl">
-              View Our Products
-              <Store className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-            </Link>
-          </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="text-center group bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <div className="text-2xl md:text-3xl font-black text-blue-600 mb-1 group-hover:scale-110 transition-transform duration-300">9+</div>
-              <div className="text-gray-700 font-semibold text-xs">Years of Excellence</div>
-            </div>
-            <div className="text-center group bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <div className="text-2xl md:text-3xl font-black text-indigo-600 mb-1 group-hover:scale-110 transition-transform duration-300">5+</div>
-              <div className="text-gray-700 font-semibold text-xs">Product Categories</div>
-            </div>
-            <div className="text-center group bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <div className="text-2xl md:text-3xl font-black text-purple-600 mb-1 group-hover:scale-110 transition-transform duration-300">2</div>
-              <div className="text-gray-700 font-semibold text-xs">Strategic Hubs</div>
-            </div>
-            <div className="text-center group bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-              <div className="text-2xl md:text-3xl font-black text-green-600 mb-1 group-hover:scale-110 transition-transform duration-300">100%</div>
-              <div className="text-gray-700 font-semibold text-xs">Partner Focus</div>
-            </div>
-          </div>
-
-          {/* Business Highlights */}
-          <div className="max-w-5xl mx-auto mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Building2 className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-base font-semibold text-gray-800 mb-2">Strategic Distribution</h3>
-                <p className="text-gray-600 text-xs">Strategic hubs in Delhi-NCR and Bihar for comprehensive North East India coverage</p>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/partners" className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-xl border border-blue-500">
+                  Partner With Us
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                </Link>
+                <Link href="/products" className="group bg-white hover:bg-gray-50 text-gray-800 font-bold py-4 px-8 rounded-xl border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 flex items-center justify-center gap-3 text-xl hover:scale-105 shadow-lg hover:shadow-xl">
+                  View Our Products
+                  <Store className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                </Link>
               </div>
-              <div className="text-center bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="w-6 h-6 text-white" />
+            </div>
+
+            {/* Right Side - Compact Info (1 column) */}
+            <div className="lg:col-span-1 space-y-4">
+              {/* Compact Trust Indicators */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-gray-800 bg-white border border-green-200 rounded-lg px-3 py-2 shadow-sm">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="font-semibold text-sm">Authorized Distributor</span>
                 </div>
-                <h3 className="text-base font-semibold text-gray-800 mb-2">Growth Partnership</h3>
-                <p className="text-gray-600 text-xs">We don't just distribute - we partner for long-term brand success and market growth</p>
+                <div className="flex items-center gap-2 text-gray-800 bg-white border border-blue-200 rounded-lg px-3 py-2 shadow-sm">
+                  <Award className="w-4 h-4 text-blue-600" />
+                  <span className="font-semibold text-sm">Established 2017</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-800 bg-white border border-purple-200 rounded-lg px-3 py-2 shadow-sm">
+                  <Users className="w-4 h-4 text-purple-600" />
+                  <span className="font-semibold text-sm">North East India Coverage</span>
+                </div>
               </div>
-              <div className="text-center bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-violet-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Store className="w-6 h-6 text-white" />
+
+              {/* Compact Stats Grid */}
+              <div className="grid grid-cols-2 gap-2">
+                <div className="text-center bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+                  <div className="text-2xl font-black text-blue-600">9+</div>
+                  <div className="text-gray-600 font-semibold text-xs">Years</div>
                 </div>
-                <h3 className="text-base font-semibold text-gray-800 mb-2">Premium Products</h3>
-                <p className="text-gray-600 text-xs">From edible oils to our own Glomin brand dry fruits, quality is our priority</p>
+                <div className="text-center bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+                  <div className="text-2xl font-black text-indigo-600">5+</div>
+                  <div className="text-gray-600 font-semibold text-xs">Categories</div>
+                </div>
+                <div className="text-center bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+                  <div className="text-2xl font-black text-purple-600">2</div>
+                  <div className="text-gray-600 font-semibold text-xs">Hubs</div>
+                </div>
+                <div className="text-center bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+                  <div className="text-2xl font-black text-green-600">100%</div>
+                  <div className="text-gray-600 font-semibold text-xs">Focus</div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Quick Navigation */}
+
+          {/* Business Highlights - Horizontal Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="text-center bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Building2 className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-base font-semibold text-gray-800 mb-2">Strategic Distribution</h3>
+              <p className="text-gray-600 text-xs">Strategic hubs in Delhi-NCR and Bihar for comprehensive North East India coverage</p>
+            </div>
+            <div className="text-center bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-base font-semibold text-gray-800 mb-2">Growth Partnership</h3>
+              <p className="text-gray-600 text-xs">We don't just distribute - we partner for long-term brand success and market growth</p>
+            </div>
+            <div className="text-center bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-violet-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Store className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-base font-semibold text-gray-800 mb-2">Premium Products</h3>
+              <p className="text-gray-600 text-xs">From edible oils to our own Glomin brand dry fruits, quality is our priority</p>
+            </div>
+          </div>
+
+          {/* Quick Navigation - Horizontal Layout */}
           <div className="text-center">
-            <p className="text-gray-700 mb-4 text-base font-medium">Explore More About Glomin Overseas</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-sm font-medium hover:scale-105 transform bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full px-3 py-2 hover:shadow-lg">
+            <p className="text-gray-700 mb-6 text-lg font-semibold">Explore More About Glomin Overseas</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 text-base font-semibold hover:scale-105 transform bg-white border-2 border-blue-200 rounded-full px-6 py-3 hover:shadow-xl">
                 About Us →
               </Link>
-              <Link href="/company" className="text-gray-700 hover:text-indigo-600 transition-all duration-300 text-sm font-medium hover:scale-105 transform bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-full px-3 py-2 hover:shadow-lg">
+              <Link href="/company" className="text-gray-700 hover:text-indigo-600 transition-all duration-300 text-base font-semibold hover:scale-105 transform bg-white border-2 border-indigo-200 rounded-full px-6 py-3 hover:shadow-xl">
                 Company Profile →
               </Link>
-              <Link href="/careers" className="text-gray-700 hover:text-purple-600 transition-all duration-300 text-sm font-medium hover:scale-105 transform bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-full px-3 py-2 hover:shadow-lg">
+              <Link href="/careers" className="text-gray-700 hover:text-purple-600 transition-all duration-300 text-base font-semibold hover:scale-105 transform bg-white border-2 border-purple-200 rounded-full px-6 py-3 hover:shadow-xl">
                 Join Our Team →
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-violet-600 transition-all duration-300 text-sm font-medium hover:scale-105 transform bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-full px-3 py-2 hover:shadow-lg">
+              <Link href="/contact" className="text-gray-700 hover:text-violet-600 transition-all duration-300 text-base font-semibold hover:scale-105 transform bg-white border-2 border-violet-200 rounded-full px-6 py-3 hover:shadow-xl">
                 Get In Touch →
               </Link>
+            </div>
+          </div>
+
+
+          
+          {/* Featured Brands Section */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Featured Brand Partners</h3>
+              <p className="text-lg text-gray-600">Leading brands trust us for their North East India distribution</p>
+            </div>
+            
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/hul.png" 
+                    alt="HUL" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/mtr.png" 
+                    alt="MTR" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/enami.jpeg" 
+                    alt="Emami" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/bestchoice.jpeg" 
+                    alt="Best Choice" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/mother.png" 
+                    alt="Mother's Recipe" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <Image 
+                    src="/images/brands/catch.jpeg" 
+                    alt="Catch" 
+                    width={60} 
+                    height={60} 
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/about" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200">
+                  View All Brand Partners
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

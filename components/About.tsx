@@ -3,6 +3,7 @@
 import { Target, Users, Globe, Award, TrendingUp, CheckCircle,ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -265,114 +266,159 @@ export default function About() {
             {/* Brand Logos Section */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
               <h4 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Our Brand Portfolio</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600 mb-1">HUL</div>
-                    <div className="text-xs text-gray-600">Hindustan Unilever</div>
-                  </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 items-center">
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/hul.png" 
+                    alt="HUL - Hindustan Unilever" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Emami</div>
-                    <div className="text-xs text-gray-600">Healthy & Tasty</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/enami.jpeg" 
+                    alt="Emami - Healthy & Tasty" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600 mb-1">Best Choice</div>
-                    <div className="text-xs text-gray-600">Refined Soybean Oil</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/bestchoice.jpeg" 
+                    alt="Best Choice - Refined Soybean Oil" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Catch</div>
-                    <div className="text-xs text-gray-600">Spices</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/catch.jpeg" 
+                    alt="Catch - Spices" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Pansari</div>
-                    <div className="text-xs text-gray-600">Oil | Rice | Atta | Spices</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/pansari.jpeg" 
+                    alt="Pansari - Oil | Rice | Atta | Spices" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Fena</div>
-                    <div className="text-xs text-gray-600">फेना ही लेना</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/fena.jpeg" 
+                    alt="Fena - फेना ही लेना" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-green-600 mb-1">Granola</div>
-                    <div className="text-xs text-gray-600">Premium</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/sparsh.png" 
+                    alt="Sparsh - Quality" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Sparsh</div>
-                    <div className="text-xs text-gray-600">Quality</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/mother.png" 
+                    alt="Mother's Recipe - Taste The Love" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-yellow-600 mb-1">Mother's Recipe</div>
-                    <div className="text-xs text-gray-600">Taste The Love</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/mtr.png" 
+                    alt="MTR - Foods" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">MTR</div>
-                    <div className="text-xs text-gray-600">Foods</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/eastern.png" 
+                    alt="Eastern - Products" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-orange-600 mb-1">Eastern</div>
-                    <div className="text-xs text-gray-600">Products</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/nova.png" 
+                    alt="Nova - Dairy Products" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600 mb-1">Nova</div>
-                    <div className="text-xs text-gray-600">Dairy Products</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/kidys.png" 
+                    alt="Kidys - Bakery" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600 mb-1">Kidys</div>
-                    <div className="text-xs text-gray-600">Bakery</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/lijjat.jpeg" 
+                    alt="Lijjat - पापड़" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Lijjat</div>
-                    <div className="text-xs text-gray-600">पापड़</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/ds.png" 
+                    alt="DS Group - Premium" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-green-600 mb-1">DS Group</div>
-                    <div className="text-xs text-gray-600">Premium</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/marvel.jpeg" 
+                    alt="Marvel - Tea" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-green-600 mb-1">Marvel</div>
-                    <div className="text-xs text-gray-600">Tea</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/orkla.jpeg" 
+                    alt="Orkla - India" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600 mb-1">Orkla</div>
-                    <div className="text-xs text-gray-600">India</div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-lg p-4 h-24 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-gray-800 mb-1">Wicked Gud</div>
-                    <div className="text-xs text-gray-600">Premium</div>
-                  </div>
+                <div className="bg-white rounded-xl p-4 h-32 flex items-center justify-center border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Image 
+                    src="/images/brands/wicked.jpeg" 
+                    alt="Wicked Gud - Premium" 
+                    width={80} 
+                    height={80} 
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
               </div>
               <p className="text-center text-gray-600 mt-6">We partner with leading FMCG brands across categories including Edible Oils, Rice, Sugar, Spices, Dry Fruits, FMCG & Cosmetics</p>
