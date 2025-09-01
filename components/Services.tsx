@@ -1,10 +1,32 @@
 'use client'
 
-import { ShoppingCart, Store, Globe, Users, BarChart3, Package } from 'lucide-react'
+import { ShoppingCart, Store, Globe, Users, BarChart3, Package, Play, Pause, Volume2, VolumeX } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Services() {
   const [isVisible, setIsVisible] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [showVideo, setShowVideo] = useState(false)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
+  const warehouseImages = [
+    '/images/warehouse/warehouse1.jpg',
+    '/images/warehouse/warehouse2.jpg',
+    '/images/warehouse/warehouse3.jpg',
+    '/images/warehouse/warehouse4.jpg',
+    '/images/warehouse/warehouse5.jpg',
+    '/images/warehouse/warehouse6.jpg',
+    '/images/warehouse/warehouse7.jpg',
+    '/images/warehouse/warehouse8.jpg',
+    '/images/warehouse/warehouse9.jpg',
+    '/images/warehouse/warehouse10.jpg',
+    '/images/warehouse/warehouse11.jpg',
+    '/images/warehouse/warehouse12.webp',
+    '/images/warehouse/warehouse13.jpg',
+    '/images/warehouse/warehouse14.jpg'
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,6 +45,34 @@ export default function Services() {
 
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % warehouseImages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [warehouseImages.length])
+
+  const toggleVideo = () => {
+    setShowVideo(!showVideo)
+    if (!showVideo) {
+      setIsVideoPlaying(true)
+    } else {
+      setIsVideoPlaying(false)
+    }
+  }
+
+  const toggleVideoPlay = () => {
+    const video = document.getElementById('services-warehouse-video') as HTMLVideoElement
+    if (!video) return
+
+    if (isVideoPlaying) {
+      video.pause()
+    } else {
+      video.play()
+    }
+    setIsVideoPlaying(!isVideoPlaying)
+  }
 
   const services = [
     {
@@ -140,6 +190,84 @@ export default function Services() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Warehouse Showcase Section */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-secondary-900 text-center mb-8">Our Warehouse & Operations</h3>
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-lg font-medium text-gray-700">
+                  {showVideo ? 'Warehouse Video Tour' : 'Live Warehouse Feed'}
+                </span>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={toggleVideo}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                      showVideo 
+                        ? 'bg-primary-600 text-white' 
+                        : 'bg-primary-100 text-primary-600 hover:bg-primary-200'
+                    }`}
+                  >
+                    {showVideo ? 'Show Images' : 'Show Video'}
+                  </button>
+                  <Link 
+                    href="/warehouse-gallery"
+                    className="px-4 py-2 bg-secondary-100 text-secondary-600 hover:bg-secondary-200 rounded-full text-sm font-medium transition-colors duration-200"
+                  >
+                    View All Images
+                  </Link>
+                </div>
+              </div>
+              
+              {showVideo ? (
+                <div className="relative h-80 bg-gradient-to-r from-primary-100 to-accent-100 rounded-xl overflow-hidden">
+                  <video
+                    id="services-warehouse-video"
+                    src="/video/video1.mp4"
+                    className="w-full h-full object-cover"
+                    loop
+                    onPlay={() => setIsVideoPlaying(true)}
+                    onPause={() => setIsVideoPlaying(false)}
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={toggleVideoPlay}
+                      className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    >
+                      {isVideoPlaying ? (
+                        <Pause className="w-10 h-10 text-primary-600" />
+                      ) : (
+                        <Play className="w-10 h-10 text-primary-600 ml-1" />
+                      )}
+                    </button>
+                  </div>
+                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium">
+                    Warehouse Video Tour - Click to {isVideoPlaying ? 'Pause' : 'Play'}
+                  </div>
+                </div>
+              ) : (
+                <div className="relative h-64 bg-gradient-to-r from-primary-100 to-accent-100 rounded-xl overflow-hidden">
+                  <Image
+                    src={warehouseImages[currentImageIndex]}
+                    alt="Warehouse Operations"
+                    fill
+                    className="object-cover transition-all duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium">
+                    Warehouse {currentImageIndex + 1} of {warehouseImages.length} - Live Feed
+                  </div>
+                </div>
+              )}
+              
+              <div className="mt-4 text-center">
+                <p className="text-gray-600 text-sm">
+                  Our state-of-the-art warehouses ensure efficient storage and distribution of all FMCG products
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Bottom CTA Section */}

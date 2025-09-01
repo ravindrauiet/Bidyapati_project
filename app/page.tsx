@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import WarehouseShowcase from '@/components/WarehouseShowcase'
 import About from '@/components/About'
 import BusinessModel from '@/components/BusinessModel'
 import Footer from '@/components/Footer'
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       <BusinessModel />
+      <WarehouseShowcase />
       <Footer />
     </main>
   )
