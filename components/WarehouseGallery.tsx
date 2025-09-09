@@ -102,7 +102,7 @@ export default function WarehouseGallery() {
                <div className="relative h-96 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl overflow-hidden">
                  <video
                    id="gallery-warehouse-video"
-                   src="/video/video1.mp4"
+                   src="/video/video2.mp4"
                    className="w-full h-full object-cover"
                    loop
                    onPlay={() => setIsVideoPlaying(true)}

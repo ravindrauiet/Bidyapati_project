@@ -418,7 +418,7 @@ export default function Products() {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
-              {Array.from({ length: 25 }, (_, i) => (
+              {Array.from({ length: 10 }, (_, i) => (
                 <div 
                   key={i} 
                   className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-110 scroll-triggered-scale"

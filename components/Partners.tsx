@@ -2,6 +2,7 @@
 
 import { Target, TrendingUp, Users, Award, Globe, Building, BarChart3, Heart, Star } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import BrandPortfolio from './BrandPortfolio'
 
 export default function Partners() {
   const [isVisible, setIsVisible] = useState(false)
@@ -190,6 +191,7 @@ export default function Partners() {
             </div>
           </div>
 
+              <BrandPortfolio />
           {/* Partnership Process */}
           <div className="mb-16">
             <h3 className="text-3xl font-bold text-secondary-900 text-center mb-12">Our Partnership Process</h3>
