@@ -54,18 +54,13 @@ export default function Company() {
   const achievements = [
     {
       year: "2017",
-      title: "Company Founded",
+      title: "Company Founded & Brand Launch",
       description: "Glomin Overseas established with a vision to transform FMCG distribution"
     },
     {
-      year: "2019",
+      year: "2021",
       title: "Delhi-NCR Expansion",
       description: "Successfully launched Modern Trade and E-commerce operations"
-    },
-    {
-      year: "2021",
-      title: "Own Brand Launch",
-      description: "Introduced premium Glomin brand of dry fruits and nuts"
     },
     {
       year: "2023",
@@ -76,6 +71,11 @@ export default function Company() {
       year: "2024",
       title: "Strategic Growth",
       description: "Established as a leading C&F Agent across North East India"
+    },
+    {
+      year: "2025",
+      title: "Kolkata Operations",
+      description: "Expanded to General Trade distribution in Kolkata region"
     }
   ]
 

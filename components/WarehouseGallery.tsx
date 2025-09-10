@@ -10,20 +10,20 @@ export default function WarehouseGallery() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   const warehouseImages = [
-    '/images/warehouse/warehouse1.jpg',
-    '/images/warehouse/warehouse2.jpg',
-    '/images/warehouse/warehouse3.jpg',
-    '/images/warehouse/warehouse4.jpg',
-    '/images/warehouse/warehouse5.jpg',
-    '/images/warehouse/warehouse6.jpg',
-    '/images/warehouse/warehouse7.jpg',
-    '/images/warehouse/warehouse8.jpg',
-    '/images/warehouse/warehouse9.jpg',
-    '/images/warehouse/warehouse10.jpg',
-    '/images/warehouse/warehouse11.jpg',
-    '/images/warehouse/warehouse12.webp',
-    '/images/warehouse/warehouse13.jpg',
-    '/images/warehouse/warehouse14.jpg'
+    '/images/warehousenew/warehouse1.png',
+    '/images/warehousenew/warehouse2.png',
+    '/images/warehousenew/warehouse3.png',
+    '/images/warehousenew/warehouse4.png',
+    '/images/warehousenew/warehouse5.png',
+    '/images/warehousenew/warehouse6.png',
+    '/images/warehousenew/warehouse7.jpg',
+    '/images/warehousenew/warehouse8.png',
+    '/images/warehousenew/warehouse9.png',
+    '/images/warehousenew/warehouse10.png',
+    '/images/warehousenew/warehouse11.png',
+    '/images/warehousenew/warehouse12.png',
+    '/images/warehousenew/warehouse13.png',
+    '/images/warehousenew/warehouse14.png'
   ]
 
   useEffect(() => {

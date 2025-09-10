@@ -1,6 +1,6 @@
 'use client'
 
-import { Download, FileText, BarChart3, Users, Globe, Award, BookOpen, Video, FileImage, ArrowRight } from 'lucide-react'
+import { Download, FileText, BarChart3, Users, Globe, Award, BookOpen, Video, FileImage, ArrowRight, DownloadCloud, Package } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Resources() {
@@ -34,7 +34,8 @@ export default function Resources() {
           type: "PDF",
           size: "2.3 MB",
           icon: FileText,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/company-profile.pdf",
+          filename: "company-profile.pdf"
         },
         {
           title: "Partnership Guide",
@@ -42,7 +43,8 @@ export default function Resources() {
           type: "PDF",
           size: "1.8 MB",
           icon: BookOpen,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/partnership-guide.pdf",
+          filename: "partnership-guide.pdf"
         },
         {
           title: "Business Model Overview",
@@ -50,7 +52,8 @@ export default function Resources() {
           type: "PDF",
           size: "1.5 MB",
           icon: BarChart3,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/business-model-overview.pdf",
+          filename: "business-model-overview.pdf"
         }
       ]
     },
@@ -63,7 +66,8 @@ export default function Resources() {
           type: "PDF",
           size: "3.1 MB",
           icon: Globe,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/market-report.pdf",
+          filename: "market-report.pdf"
         },
         {
           title: "Distribution Channel Analysis",
@@ -71,7 +75,8 @@ export default function Resources() {
           type: "PDF",
           size: "2.7 MB",
           icon: BarChart3,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/distribution-analysis.pdf",
+          filename: "distribution-analysis.pdf"
         },
         {
           title: "Product Category Insights",
@@ -79,7 +84,8 @@ export default function Resources() {
           type: "PDF",
           size: "2.2 MB",
           icon: Award,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/product-insights.pdf",
+          filename: "product-insights.pdf"
         }
       ]
     },
@@ -92,7 +98,8 @@ export default function Resources() {
           type: "PDF",
           size: "2.8 MB",
           icon: FileText,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/edible-oil-case-study.pdf",
+          filename: "edible-oil-case-study.pdf"
         },
         {
           title: "Spices Distribution Case Study",
@@ -100,7 +107,8 @@ export default function Resources() {
           type: "PDF",
           size: "2.1 MB",
           icon: BookOpen,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/spices-case-study.pdf",
+          filename: "spices-case-study.pdf"
         },
         {
           title: "Modern Trade Expansion",
@@ -108,7 +116,8 @@ export default function Resources() {
           type: "PDF",
           size: "1.9 MB",
           icon: BarChart3,
-          downloadUrl: "#"
+          downloadUrl: "/pdfs/modern-trade-case-study.pdf",
+          filename: "modern-trade-case-study.pdf"
         }
       ]
     },
@@ -121,7 +130,8 @@ export default function Resources() {
           type: "MP4",
           size: "15.2 MB",
           icon: Video,
-          downloadUrl: "#"
+          downloadUrl: "/video/video1.mp4",
+          filename: "company-introduction-video.mp4"
         },
         {
           title: "Product Portfolio Images",
@@ -129,7 +139,8 @@ export default function Resources() {
           type: "ZIP",
           size: "8.7 MB",
           icon: FileImage,
-          downloadUrl: "#"
+          downloadUrl: "#",
+          filename: "product-portfolio-images.zip"
         },
         {
           title: "Office & Warehouse Photos",
@@ -137,16 +148,69 @@ export default function Resources() {
           type: "ZIP",
           size: "12.3 MB",
           icon: FileImage,
-          downloadUrl: "#"
+          downloadUrl: "#",
+          filename: "office-warehouse-photos.zip"
         }
       ]
     }
   ]
 
   const handleDownload = (resource: any) => {
-    // In a real application, this would trigger the actual download
-    console.log(`Downloading: ${resource.title}`)
-    // You can implement actual download logic here
+    if (resource.downloadUrl && resource.downloadUrl !== "#") {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement('a')
+      link.href = resource.downloadUrl
+      link.download = resource.filename || resource.title
+      link.target = '_blank'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      
+      console.log(`Downloading: ${resource.title}`)
+    } else {
+      alert(`Download for "${resource.title}" is not available yet. Please contact us for more information.`)
+    }
+  }
+
+  const handleDownloadAll = () => {
+    // Get all PDF resources
+    const pdfResources = resources.flatMap(category => 
+      category.items.filter(item => item.type === 'PDF' && item.downloadUrl !== '#')
+    )
+    
+    if (pdfResources.length === 0) {
+      alert('No PDF files available for download.')
+      return
+    }
+
+    // Download each PDF with a small delay to avoid browser blocking
+    pdfResources.forEach((resource, index) => {
+      setTimeout(() => {
+        handleDownload(resource)
+      }, index * 500) // 500ms delay between downloads
+    })
+    
+    console.log(`Downloading ${pdfResources.length} PDF files...`)
+  }
+
+  const handleDownloadCategory = (categoryName: string) => {
+    const category = resources.find(cat => cat.category === categoryName)
+    if (!category) return
+    
+    const downloadableItems = category.items.filter(item => item.downloadUrl !== '#')
+    
+    if (downloadableItems.length === 0) {
+      alert(`No files available for download in ${categoryName}.`)
+      return
+    }
+
+    downloadableItems.forEach((item, index) => {
+      setTimeout(() => {
+        handleDownload(item)
+      }, index * 500)
+    })
+    
+    console.log(`Downloading ${downloadableItems.length} files from ${categoryName}...`)
   }
 
   return (
@@ -158,22 +222,45 @@ export default function Resources() {
             <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
               Resources & <span className="text-gradient">Downloads</span>
             </h2>
-            <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed mb-8">
               Access valuable information, insights, and resources to understand our business better. 
               Download comprehensive guides, case studies, and market reports to make informed decisions.
             </p>
+            
+            {/* Download All Button */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={handleDownloadAll}
+                className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg"
+              >
+                <DownloadCloud className="w-5 h-5" />
+                Download All PDFs
+              </button>
+              <div className="text-sm text-secondary-500">
+                {resources.flatMap(cat => cat.items.filter(item => item.type === 'PDF' && item.downloadUrl !== '#')).length} PDF files available
+              </div>
+            </div>
           </div>
 
           {/* Resources Grid */}
           <div className="space-y-12 mb-16">
             {resources.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-6 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <Download className="w-5 h-5 text-primary-600" />
-                  </div>
-                  {category.category}
-                </h3>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                  <h3 className="text-2xl font-bold text-secondary-900 flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                      <Download className="w-5 h-5 text-primary-600" />
+                    </div>
+                    {category.category}
+                  </h3>
+                  <button
+                    onClick={() => handleDownloadCategory(category.category)}
+                    className="mt-3 sm:mt-0 bg-primary-100 hover:bg-primary-200 text-primary-700 font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center gap-2 text-sm"
+                  >
+                    <Package className="w-4 h-4" />
+                    Download All in Category
+                  </button>
+                </div>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, itemIndex) => (
@@ -195,10 +282,15 @@ export default function Resources() {
                       
                       <button
                         onClick={() => handleDownload(item)}
-                        className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                        className={`w-full font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 ${
+                          item.downloadUrl && item.downloadUrl !== "#" 
+                            ? "bg-primary-600 hover:bg-primary-700 text-white" 
+                            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        }`}
+                        disabled={!item.downloadUrl || item.downloadUrl === "#"}
                       >
                         <Download className="w-4 h-4" />
-                        Download
+                        {item.downloadUrl && item.downloadUrl !== "#" ? "Download" : "Coming Soon"}
                       </button>
                     </div>
                   ))}
@@ -225,7 +317,10 @@ export default function Resources() {
                 <p className="text-secondary-600 text-center mb-4">
                   Essential information for brands looking to partner with us
                 </p>
-                <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                <button 
+                  onClick={() => handleDownload(resources[0].items[0])}
+                  className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                >
                   Download Guide
                 </button>
               </div>
@@ -238,7 +333,10 @@ export default function Resources() {
                 <p className="text-secondary-600 text-center mb-4">
                   Comprehensive analysis of North East India FMCG distribution
                 </p>
-                <button className="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                <button 
+                  onClick={() => handleDownload(resources[1].items[0])}
+                  className="w-full bg-accent-600 hover:bg-accent-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                >
                   Download Report
                 </button>
               </div>
@@ -251,7 +349,10 @@ export default function Resources() {
                 <p className="text-secondary-600 text-center mb-4">
                   Complete kit for brands ready to start their journey with us
                 </p>
-                <button className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+                <button 
+                  onClick={() => handleDownloadCategory("Company Information")}
+                  className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                >
                   Download Kit
                 </button>
               </div>
