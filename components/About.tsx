@@ -305,7 +305,7 @@ export default function About() {
       </div>
        
     </section>
-    <Footer />
+    {/* <Footer /> */}
     </>
   )
 }
